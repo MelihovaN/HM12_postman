@@ -1,0 +1,265 @@
+{
+	"id": "3c540367-e2a1-4fd8-971f-bad191603050",
+	"name": "Box Creating",
+	"timestamp": "2023-02-23T13:19:09.483Z",
+	"collection_id": "19331980-4f795c2a-34e4-4e21-86bf-df77b827d9e0",
+	"folder_id": 0,
+	"environment_id": "19331980-4ae625b0-ced1-4a6c-8f24-3d2077bd7ffe",
+	"totalPass": 36,
+	"delay": "5",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-02-23T13:19:02.903Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "1fe587be-4cee-40f2-9ea1-44bb3ee30f3d",
+			"name": "Creat a box",
+			"url": "https://staging.lpitko.ru/api/box",
+			"time": 336,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Check name of the box": true,
+				"Check key of the box": true,
+				"Check Json response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Check name of the box": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Check key of the box": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Check Json response": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				1550,
+				301,
+				336
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Check name of the box": true,
+					"Check key of the box": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 200": true,
+					"Check name of the box": true,
+					"Check key of the box": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 200": true,
+					"Check name of the box": true,
+					"Check key of the box": true,
+					"Check Json response": true
+				}
+			]
+		},
+		{
+			"id": "a28834ab-24ba-4e88-9381-764bf93d2b2a",
+			"name": "list of boxes",
+			"url": "https://staging.lpitko.ru/api/account/boxes",
+			"time": 353,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Check Json response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Check Json response": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				375,
+				339,
+				353
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 200": true,
+					"Check Json response": true
+				}
+			]
+		},
+		{
+			"id": "c0dd2181-99b1-4241-b745-0c8bd8746851",
+			"name": "Box Settings",
+			"url": "https://staging.lpitko.ru/api/box",
+			"time": 288,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Check Json response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Check Json response": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				290,
+				285,
+				288
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 200": true,
+					"Check Json response": true
+				}
+			]
+		},
+		{
+			"id": "b26d5f65-1b00-423b-b9e3-9693ba7ff751",
+			"name": "delete box",
+			"url": "https://staging.lpitko.ru/api/box/bandwidth",
+			"time": 265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				276,
+				287,
+				265
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				},
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "8751e37b-ab27-4fd2-9116-a263ae7335b1",
+			"name": "Creat a box with exicting key",
+			"url": "https://staging.lpitko.ru/api/box",
+			"time": 262,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Check Json response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Check Json response": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				270,
+				272,
+				262
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 400": true,
+					"Check Json response": true
+				},
+				{
+					"Status code is 400": true,
+					"Check Json response": true
+				}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 5749,
+	"collection": {
+		"requests": [
+			{
+				"id": "1fe587be-4cee-40f2-9ea1-44bb3ee30f3d",
+				"method": "POST"
+			},
+			{
+				"id": "a28834ab-24ba-4e88-9381-764bf93d2b2a",
+				"method": "GET"
+			},
+			{
+				"id": "c0dd2181-99b1-4241-b745-0c8bd8746851",
+				"method": "PUT"
+			},
+			{
+				"id": "b26d5f65-1b00-423b-b9e3-9693ba7ff751",
+				"method": "DELETE"
+			},
+			{
+				"id": "8751e37b-ab27-4fd2-9116-a263ae7335b1",
+				"method": "POST"
+			}
+		]
+	}
+}

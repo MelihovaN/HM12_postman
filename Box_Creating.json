@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "4f795c2a-34e4-4e21-86bf-df77b827d9e0",
+		"name": "Box Creating1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19331980"
+	},
+	"item": [
+		{
+			"name": "Creat a box",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const boxName=pm.variables.replaceIn(\"{{$randomNoun}}\");",
+							"pm.environment.set(\"boxName\", boxName)",
+							"",
+							"const boxKey=pm.variables.replaceIn(\"{{$randomNoun}}\");",
+							"pm.environment.set(\"boxKey\", boxKey)",
+							"",
+							"const PhoneRequired=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"PhoneRequired\", PhoneRequired)",
+							"",
+							"const useNames=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"useNames\", useNames)",
+							"",
+							"const useWish=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"useWish\", useWish)",
+							"",
+							"const usePost=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"usePost\", usePost)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const boxname = pm.environment.get(\"boxName\")",
+							"",
+							"pm.test(\"Check name of the box\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.box.name).to.eql(boxname);",
+							"})",
+							"",
+							"const boxkey = pm.environment.get(\"boxKey\")",
+							"",
+							"pm.test(\"Check key of the box\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.box.key).to.eql(boxkey);",
+							"})",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.admin.username).to.eql(\"natalia\");",
+							"    pm.expect(jsonData.admin.email).to.eql(\"melihova.qa@gmail.com\");",
+							"    pm.expect(jsonData.box.cashLimit).to.eql(15);",
+							"    pm.expect(jsonData.box.cashLimitCurrency).to.eql(\"eur\");",
+							"    pm.expect(jsonData.box.picture).to.eql(\"cake\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":null,\n\"name\":\"{{boxName}}\",\n\"key\":\"{{boxKey}}\",\n\"picture\":\"cake\",\n\"usePost\":\"{{usePost}}\",\n\"useCashLimit\":true,\n\"cashLimit\":\"{{cashLimit}}\",\n\"cashLimitCurrency\":\"{{cashLimitCurrency}}\",\n\"useWish\":\"{{useWish}}\",\n\"useCircleDraw\":null,\n\"isInviteAfterDraw\":null,\n\"isArchived\":null,\n\"createAdminCard\":null,\n\"isCreated\":true,\n\"useNames\":\"{{useNames}}\",\n\"isPhoneRequired\":\"{{PhoneRequired}}\",\n\"logo\":null}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/box",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"box"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of boxes1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].admin.username).to.eql(\"Joey\");",
+							"    pm.expect(jsonData[0].admin.email).to.eql(\"test-email2022@mail.ru\");",
+							"    pm.expect(jsonData[0].box.name).to.eql(\"cv\");",
+							"})",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[1].admin.username).to.eql(\"natalia\");",
+							"    pm.expect(jsonData[1].admin.email).to.eql(\"melihova.qa@gmail.com\");",
+							"    pm.expect(jsonData[1].box.name).to.eql(\"1234\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base url}}/account/boxes",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"account",
+						"boxes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Box Settings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.admin.username).to.eql(\"natalia\");",
+							"    pm.expect(jsonData.admin.email).to.eql(\"melihova.qa@gmail.com\");",
+							"    pm.expect(jsonData.box.cashLimit).to.eql(20);",
+							"    pm.expect(jsonData.box.name).to.eql(\"Gift\");",
+							"    pm.expect(jsonData.box.picture).to.eql(\"cup_two\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":null,\n\"name\":\"Gift\",\n\"key\":\"{{boxKey}}\",\n\"picture\":\"cup_two\",\n\"usePost\":\"{{usePost}}\",\n\"useCashLimit\":true,\n\"cashLimit\":20,\n\"cashLimitCurrency\":\"{{cashLimitCurrency}}\",\n\"useWish\":\"{{useWish}}\",\n\"useCircleDraw\":null,\n\"isInviteAfterDraw\":null,\n\"isArchived\":null,\n\"createAdminCard\":null,\n\"isCreated\":true,\n\"useNames\":\"{{useNames}}\",\n\"isPhoneRequired\":\"{{PhoneRequired}}\",\n\"logo\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://staging.lpitko.ru/api/box",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"lpitko",
+						"ru"
+					],
+					"path": [
+						"api",
+						"box"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete box1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base url}}/box/{{boxKey}}",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"box",
+						"{{boxKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat a box with exicting key",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const boxName=pm.variables.replaceIn(\"{{$randomNoun}}\");",
+							"pm.environment.set(\"boxName\", boxName)",
+							"",
+							"const boxKey=pm.variables.replaceIn(\"{{$randomNoun}}\");",
+							"pm.environment.set(\"boxKey\", boxKey)",
+							"",
+							"const PhoneRequired=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"PhoneRequired\", PhoneRequired)",
+							"",
+							"const useNames=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"useNames\", useNames)",
+							"",
+							"const useWish=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"useWish\", useWish)",
+							"",
+							"const usePost=pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"pm.environment.set(\"usePost\", usePost)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.eql(\"BOX_KEY_ALREADY_EXIST\");",
+							"    ",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":null,\n\"name\":\"{{boxName}}\",\n\"key\":\"Santa\",\n\"picture\":\"cake\",\n\"usePost\":\"{{usePost}}\",\n\"useCashLimit\":true,\n\"cashLimit\":\"{{cashLimit}}\",\n\"cashLimitCurrency\":\"{{cashLimitCurrency}}\",\n\"useWish\":\"{{useWish}}\",\n\"useCircleDraw\":null,\n\"isInviteAfterDraw\":null,\n\"isArchived\":null,\n\"createAdminCard\":null,\n\"isCreated\":true,\n\"useNames\":\"{{useNames}}\",\n\"isPhoneRequired\":\"{{PhoneRequired}}\",\n\"logo\":null}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/box",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"box"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
