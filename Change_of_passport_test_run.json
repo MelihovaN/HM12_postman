@@ -1,0 +1,94 @@
+{
+	"id": "5088f987-b8dd-4023-b2a3-7f6a93a129d4",
+	"name": "Sign-in",
+	"timestamp": "2023-02-24T13:40:52.981Z",
+	"collection_id": "19331980-65e8fe80-5b0f-47ac-9aad-fc989c81246a",
+	"folder_id": 0,
+	"environment_id": "19331980-4ae625b0-ced1-4a6c-8f24-3d2077bd7ffe",
+	"totalPass": 16,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-02-24T13:40:49.198Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b814c10b-8124-41b8-9cc3-a6c8d53b4af2",
+			"name": "Change password",
+			"url": "https://staging.lpitko.ru/api/account/password",
+			"time": 258,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Test status code": true,
+				"Test data type of the response": true
+			},
+			"testPassFailCounts": {
+				"Test status code": {
+					"pass": 8,
+					"fail": 0
+				},
+				"Test data type of the response": {
+					"pass": 8,
+					"fail": 0
+				}
+			},
+			"times": [
+				281,
+				259,
+				297,
+				274,
+				277,
+				276,
+				263,
+				258
+			],
+			"allTests": [
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				},
+				{
+					"Test status code": true,
+					"Test data type of the response": true
+				}
+			]
+		}
+	],
+	"count": 8,
+	"totalTime": 2185,
+	"collection": {
+		"requests": [
+			{
+				"id": "b814c10b-8124-41b8-9cc3-a6c8d53b4af2",
+				"method": "PUT"
+			}
+		]
+	}
+}
