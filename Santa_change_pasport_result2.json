@@ -1,0 +1,111 @@
+{
+	"id": "817f847e-3f5c-41bf-8a46-76dbb0659af4",
+	"name": "Sign-in",
+	"timestamp": "2023-02-24T20:23:50.261Z",
+	"collection_id": "19331980-65e8fe80-5b0f-47ac-9aad-fc989c81246a",
+	"folder_id": 0,
+	"environment_id": "19331980-4ae625b0-ced1-4a6c-8f24-3d2077bd7ffe",
+	"totalPass": 24,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-02-24T20:23:47.065Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b814c10b-8124-41b8-9cc3-a6c8d53b4af2",
+			"name": "Change password",
+			"url": "https://staging.lpitko.ru/api/account/password",
+			"time": 344,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test status code": true,
+				"Status code is 200": true,
+				"Check Json response": true
+			},
+			"testPassFailCounts": {
+				"Test status code": {
+					"pass": 8,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Check Json response": {
+					"pass": 8,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				283,
+				270,
+				304,
+				303,
+				395,
+				314,
+				377,
+				344
+			],
+			"allTests": [
+				{
+					"Test status code": true,
+					"Status code is 400": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 400": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 400": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 400": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 200": true,
+					"Check Json response": true
+				},
+				{
+					"Test status code": true,
+					"Status code is 200": true,
+					"Check Json response": true
+				}
+			]
+		}
+	],
+	"count": 8,
+	"totalTime": 2590,
+	"collection": {
+		"requests": [
+			{
+				"id": "b814c10b-8124-41b8-9cc3-a6c8d53b4af2",
+				"method": "PUT"
+			}
+		]
+	}
+}
